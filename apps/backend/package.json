@@ -4,7 +4,8 @@
   "type": "module",
   "scripts": {
     "dev": "tsx watch src/server.ts",
-    "build": "tsc"
+    "start": "tsx src/server.ts",
+    "build": "cd ../../ && npm install && npm run build -w @pkg/load-balancer"
   },
   "dependencies": {
     "express": "^4.19.0",
