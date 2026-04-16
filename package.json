@@ -10,7 +10,7 @@
   ],
   "scripts": {
     "dev": "concurrently \"npm run dev -w @app/backend\" \"npm run dev -w @app/frontend\"",
-    "build": "npm run build --workspaces",
+    "build": "npm run build -w @pkg/load-balancer && npm run build -w apps/frontend",
     "type-check": "npm run type-check --workspaces"
   },
   "devDependencies": {
