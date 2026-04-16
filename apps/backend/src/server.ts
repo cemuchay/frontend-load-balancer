@@ -41,10 +41,9 @@ app.get('/server2', (req, res) => simulateServer(res, 'server2', 0.05, 800));
 // Server 3: The Wildcard (Average speed, random failures)
 app.get('/server3', (req, res) => simulateServer(res, 'server3', 0.15, 400));
 
-const PORT = 4000;
-app.listen(PORT, () => {
-  console.log(`\n🚀 Chaos Backend running at http://localhost:${PORT}`);
-  console.log(`- http://localhost:${PORT}/server1 (Fast/Unstable)`);
-  console.log(`- http://localhost:${PORT}/server2 (Slow/Stable)`);
-  console.log(`- http://localhost:${PORT}/server3 (Balanced)\n`);
+
+const PORT = process.env.PORT || 4000;
+
+app.listen(PORT as number, '0.0.0.0', () => {
+  console.log(`Backend simulation running on port ${PORT}`);
 });
